@@ -1,0 +1,506 @@
+/* ===== General Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/memphis-mini.png');
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header & Navigation ===== */
+.main-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: 0.9;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.fragment-link {
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.fragment-link:hover {
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* ===== Container & Layout ===== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+    flex: 1;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.profile-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #3498db;
+    margin-bottom: 1.5rem;
+    animation: borderColorChange 4s infinite;
+}
+
+@keyframes borderColorChange {
+    0% { border-color: #3498db; }
+    25% { border-color: #e74c3c; }
+    50% { border-color: #f39c12; }
+    75% { border-color: #2ecc71; }
+    100% { border-color: #3498db; }
+}
+
+.contact-info h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.contact-info p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #2980b9;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: brightness(1.2);
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.main-content h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* ===== About Section with Pseudo-elements ===== */
+.about-text::first-letter {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #3498db;
+    float: left;
+    line-height: 1;
+    margin-right: 0.5rem;
+}
+
+.about-text::before {
+    content: "✦ ";
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+.about-text::after {
+    content: " ✦";
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+/* ===== Sections ===== */
+.about-section,
+.education-section,
+.skills-section,
+.projects-section,
+.schedule-section,
+.courses-section,
+.contact-section {
+    margin-bottom: 3rem;
+}
+
+.education-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3498db;
+}
+
+.education-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.institution {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Skills Section ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    background: #ecf0f1;
+    height: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.skill-level {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    height: 100%;
+    border-radius: 12px;
+    transition: width 1s ease;
+}
+
+.soft-skills {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.soft-skills li {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+}
+
+/* ===== Projects & Experience ===== */
+.experience-item,
+.project-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #2ecc71;
+}
+
+.experience-item h3,
+.project-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.company,
+.project-role {
+    color: #2ecc71;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.experience-item ul,
+.project-item ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.experience-item li,
+.project-item li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Tables ===== */
+.table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+}
+
+.schedule-table,
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.schedule-table th,
+.courses-table th {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.schedule-table td,
+.courses-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.schedule-table tbody tr:nth-child(odd),
+.courses-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tbody tr:nth-child(even),
+.courses-table tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.schedule-table tbody tr:nth-child(odd):hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+.schedule-table tbody tr:nth-child(even):hover {
+    background-color: #fff3e0;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+.courses-table tbody tr:nth-child(odd):hover {
+    background-color: #e8f5e9;
+    transition: all 0.3s ease;
+}
+
+.courses-table tbody tr:nth-child(even):hover {
+    background-color: #fce4ec;
+    transition: all 0.3s ease;
+}
+
+/* ===== Contact Form ===== */
+.contact-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    cursor: pointer;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===== Footer ===== */
+.main-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .sidebar {
+        position: static;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .table-container {
+        font-size: 0.9rem;
+    }
+}
